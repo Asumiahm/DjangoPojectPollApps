@@ -8,7 +8,7 @@ from django.utils import timezone
 
 # Create your views here.
 class IndexView(generic.ListView):
-     template_name = "polls/index.html"
+     template_name = "django-polls/index.html"
      context_object_name = "latest_question_list"
      def get_queryset(self):
          """Return the last five published questions."""
@@ -19,14 +19,14 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = "polls/detail.html"
+    template_name = "django-polls/detail.html"
 
     def get_queryset(self):
         return Question.objects.filter(pub_date__lte=timezone.now())
 
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = "polls/results.html"
+    template_name = "django-polls/results.html"
 
 
 def vote(request, question_id):
@@ -36,7 +36,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(
             request,
-            "polls/detail.html",
+            "django-polls/detail.html",
             {
                 "question": question,
                 "error_message": "You didn't select a choice.",
@@ -45,4 +45,4 @@ def vote(request, question_id):
     else:
         selected_choice.votes = F("votes") + 1
         selected_choice.save()
-    return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+    return HttpResponseRedirect(reverse("django-polls:results", args=(question.id,)))

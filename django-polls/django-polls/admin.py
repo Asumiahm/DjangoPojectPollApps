@@ -7,6 +7,7 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 class QuestionAdmin(admin.ModelAdmin):
+    search_fields = ["question_text"]
     list_filter = ['pub_date']  # Consider filtering by date instead
     list_display = ["question_text", "pub_date", "was_published_recently"]
     ordering = ['question_text']  # This orders the questions alphabeticallyi

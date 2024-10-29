@@ -1,0 +1,34 @@
+[build-system]
+ requires = ["setuptools>=61.0"]
+ build-backend = "setuptools.build_meta"
+ [project]
+ name = "django-polls"
+ version = "0.1"
+ dependencies = [
+ "django>=4.2", # Replace "X.Y" as appropriate
+ ]
+ description = "A Django app to conduct web-based polls."
+ readme = "README.rst"
+ requires-python = ">= 3.10"
+ authors = [
+ {name = "Your Name", email = "yourname@example.com"},
+ ]
+ classifiers = [
+ "Environment :: Web Environment",
+ "Framework :: Django",
+ "Framework :: Django :: 4.2", # Replace "X.Y" as appropriate
+ "Intended Audience :: Developers",
+ "License :: OSI Approved :: BSD License",
+ "Operating System :: OS Independent",
+ "Programming Language :: Python",
+ "Programming Language :: Python :: 3",
+ "Programming Language :: Python :: 3 :: Only",
+ "Programming Language :: Python :: 3.10",
+ "Programming Language :: Python :: 3.11",
+ "Programming Language :: Python :: 3.12",
+ "Programming Language :: Python :: 3.13",
+ "Topic :: Internet :: WWW/HTTP",
+ "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+ ]
+ [project.urls]
+ Homepage = "https://www.example.com/"
